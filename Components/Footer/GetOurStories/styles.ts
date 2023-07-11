@@ -6,6 +6,7 @@ export const BigContainer = styled(Box)({
   //   minHeight: "602px !important",
   height: "auto",
   //   background: "#0D2436",
+  borderBottom: "0.1px solid #fff",
 });
 
 export const FooterWave = styled(Box)({
