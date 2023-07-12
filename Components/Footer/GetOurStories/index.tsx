@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  FooterWave,
+  CurvedRectangle,
   BigContainer,
   SubContainer,
   GetOurStory,
@@ -17,7 +17,7 @@ const GetOurStories = () => {
   return (
     <>
       <BigContainer>
-        <FooterWave />
+        <CurvedRectangle />
         <SubContainer>
           <GetOurStory>
             <h1>Get our stories delivered From us to your inbox weekly.</h1>

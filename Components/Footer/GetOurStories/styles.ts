@@ -6,16 +6,25 @@ export const BigContainer = styled(Box)({
   //   minHeight: "602px !important",
   height: "auto",
   //   background: "#0D2436",
-  borderBottom: "0.1px solid #fff",
 });
 
-export const FooterWave = styled(Box)({
+export const CurvedRectangle = styled(Box)({
   position: "relative",
   width: "100vw",
   height: "175px",
-  background: "url('/FooterWave.png')",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 175px",
+  backgroundColor: "#0D2436",
+  overflow: "hidden",
+
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "88.5px",
+    backgroundColor: "#FFF",
+    clipPath: "ellipse(50% 100% at 50% 0%)",
+  },
 });
 
 export const SubContainer = styled(Box)({
