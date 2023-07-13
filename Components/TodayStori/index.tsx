@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import {
   Author,
   FeaturedBlog,
@@ -6,10 +7,26 @@ import {
   TodayStoriContainer,
 } from "./Tstyles";
 
+import { useCallback } from "react";
+
+export const useNavigateTo = () => {
+  const router = useRouter();
+
+  const navigateTo = useCallback(
+    (path: any) => {
+      router.push(path);
+    },
+    [router]
+  );
+
+  return navigateTo;
+};
+
 const TodayStori = () => {
+  const navigateTo = useNavigateTo();
   return (
     <TodayStoriContainer>
-      <FeaturedBlog>
+      <FeaturedBlog onClick={() => navigateTo("Telastori/todays' story")}>
         <FeaturedContent>
           <div className="featured">FEATURED</div>
           <h1>Cheap Airline Tickets Great Ways To Save</h1>

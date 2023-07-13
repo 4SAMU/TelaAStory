@@ -9,6 +9,7 @@ import {
   ViewAll,
   ViewAllBtn,
 } from "./RecentStyles";
+import { useNavigateTo } from "../TodayStori";
 
 const cardData = [
   {
@@ -95,10 +96,11 @@ const cardData = [
 const RecentStories = () => {
   const [showAll, setShowAll] = useState(false);
   const [numCardsToShow, setNumCardsToShow] = useState(3);
+  const navigateTo = useNavigateTo();
 
   const handleViewAll = () => {
     setShowAll(true);
-    setNumCardsToShow(numCardsToShow+3)
+    setNumCardsToShow(numCardsToShow + 3);
   };
   return (
     <RecentContainer>
@@ -120,7 +122,11 @@ const RecentStories = () => {
         </HeaderBox>
         <CardContainer>
           {cardData.slice(0, numCardsToShow).map((card, index) => (
-            <Cards key={index} imageUrl={card.imageUrl}>
+            <Cards
+              key={index}
+              imageUrl={card.imageUrl}
+              onClick={() => navigateTo("Telastori/todays' story")}
+            >
               <div className="OvarlayColor" />
               <div className="CardDataWrapper">
                 <div className="CardName">{card.cardName}</div>

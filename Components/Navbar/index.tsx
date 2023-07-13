@@ -9,18 +9,20 @@ import {
 import { GetScreenBreakPoints } from "@/Helpers/MediaQueries";
 import { ScreenBreakPoints } from "@/Helpers/Types";
 import { useEffect, useState } from "react";
+import { useNavigateTo } from "../TodayStori";
 
 const Navbar = () => {
   const screenBreakPoints: ScreenBreakPoints = GetScreenBreakPoints();
   const { scrollY } = useWindowScrollPositions();
   const [showNavbar, setShowNavbar] = useState(false);
+  const navigateTo = useNavigateTo();
 
   useEffect(() => {
     const handleScroll = () => {
       const diff = window.scrollY - scrollY;
-      if (diff >= 1) {
+      if (diff >= 20) {
         setShowNavbar(true);
-      } else if (diff <= -1) {
+      } else if (diff <= -20) {
         setShowNavbar(false);
       }
     };
@@ -32,13 +34,28 @@ const Navbar = () => {
   return (
     <>
       <NavbarContainer {...screenBreakPoints} showNavbar={showNavbar}>
-        <NavLogo src={"/Logo.png"} alt="TellAStory" />
+        <NavLogo
+          src={"/Logo.png"}
+          alt="TellAStory"
+          onClick={() => navigateTo("/")}
+        />
         <ButtonsContainer>
-          <NavButtons variant="text">Home</NavButtons>
-          <NavButtons variant="text">About</NavButtons>
-          <NavButtons variant="text">Docs &#8964;</NavButtons>
-          <NavButtons variant="text">Help</NavButtons>
-          <NavButtonsContained variant="contained">
+          <NavButtons variant="text" onClick={() => navigateTo("/")}>
+            Home
+          </NavButtons>
+          <NavButtons variant="text" onClick={() => navigateTo("/#")}>
+            About
+          </NavButtons>
+          <NavButtons variant="text" onClick={() => navigateTo("/#")}>
+            Docs &#8964;
+          </NavButtons>
+          <NavButtons variant="text" onClick={() => navigateTo("/#")}>
+            Help
+          </NavButtons>
+          <NavButtonsContained
+            variant="contained"
+            onClick={() => navigateTo("/#")}
+          >
             Start Writing
           </NavButtonsContained>
         </ButtonsContainer>
