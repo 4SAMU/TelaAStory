@@ -25,6 +25,8 @@ export const HeaderBox = styled(Box)({
   // background: "yellow",
   height: "96px",
   width: "100%",
+  transition: "all 0.3s, 0.3s ease-in-out",
+
   "& h1": {
     position: "absolute",
     color: "#183B56",
@@ -54,6 +56,7 @@ export const ViewAllBtn = styled(Box)({
   position: "absolute",
   bottom: "0 ",
   right: "0",
+  transition: "all 0.3s, 0.3s ease-in-out",
 });
 
 export const ViewAll = styled(Button)({
@@ -67,6 +70,7 @@ export const ViewAll = styled(Button)({
   lineHeight: "normal !important",
   width: "fit-content !important",
   height: " 48px !important",
+  transition: "all 0.3s, 0.3s ease-in-out",
 });
 
 export const CardContainer = styled(Box)({
@@ -76,6 +80,10 @@ export const CardContainer = styled(Box)({
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "30px",
+  maxHeight: "1050px !important",
+  overflowY: "scroll",
+  overflowX: "hidden",
+  transition: "all 0.3s, 0.3s ease-in-out",
 });
 
 export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
@@ -90,7 +98,7 @@ export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 100%",
   cursor: "pointer",
-  transition: "height 0.3s ease",
+  transition: "all 0.3s, 0.3s ease-in-out",
 
   "& .OvarlayColor": {
     height: "inherit",

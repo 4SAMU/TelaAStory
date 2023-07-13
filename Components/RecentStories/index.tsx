@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Author,
   CardContainer,
@@ -102,6 +102,19 @@ const RecentStories = () => {
     setShowAll(true);
     setNumCardsToShow(numCardsToShow + 3);
   };
+
+  const componentRef: any = useRef(null);
+
+  useEffect(() => {
+    const getHeight = () => {
+      if (componentRef.current) {
+        const height = componentRef.current.clientHeight;
+        console.log("Component height:", height);
+      }
+    };
+
+    getHeight(); // Call getHeight when the component is mounted or updated
+  });
   return (
     <RecentContainer>
       <div className="wrapper">
@@ -120,7 +133,7 @@ const RecentStories = () => {
             </ViewAllBtn>
           )}
         </HeaderBox>
-        <CardContainer>
+        <CardContainer ref={componentRef}>
           {cardData.slice(0, numCardsToShow).map((card, index) => (
             <Cards
               key={index}
