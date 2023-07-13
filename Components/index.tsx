@@ -1,3 +1,4 @@
+import Cookies from "./CookiesModal/Cookies";
 import Footer from "./Footer/Footer";
 import RecentStories from "./RecentStories";
 import Start from "./Start";
@@ -10,6 +11,7 @@ const TellAstory = () => {
       <TodayStori />
       <RecentStories />
       <Footer />
+      <Cookies/>
     </>
   );
 };
