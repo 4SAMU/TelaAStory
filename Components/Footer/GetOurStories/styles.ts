@@ -5,7 +5,7 @@ export const BigContainer = styled(Box)({
   width: "100vw",
   //   minHeight: "602px !important",
   height: "auto",
-  //   background: "#0D2436",
+  // display:"flex",
 });
 
 export const CurvedRectangle = styled(Box)({

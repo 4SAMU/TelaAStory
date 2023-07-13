@@ -11,6 +11,7 @@ const Links = () => {
   return (
     <>
       <LinksContainer>
+        <div className="divider" />
         <SocialLinks>
           <div className="CopyRight" title="by SAMUTECHSTUDIO">
             Copyright © {currentYear}. Crafted with love.
