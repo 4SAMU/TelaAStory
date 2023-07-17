@@ -24,6 +24,13 @@ const Blog = () => {
       <BlogContainer>
         <BlogContent>
           <Content>
+            <div>
+              <img
+                src="https://miro.medium.com/v2/resize:fit:720/0*xLIQQ3iLqGqz8LFz"
+                alt="no found"
+                style={{ marginTop: "20px" }}
+              />
+            </div>
             <h1>
               How I Eliminated Procrastination From My Life (Using Neuroscience)
             </h1>
