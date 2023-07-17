@@ -11,6 +11,10 @@ import { ScreenBreakPoints } from "@/Helpers/Types";
 import { useEffect, useState } from "react";
 import { useNavigateTo } from "../TodayStori";
 
+//
+// import EditIcon from "@mui/icons-material/Edit";
+import EditIcon from "@mui/icons-material/EditNote";
+
 const Navbar = () => {
   const screenBreakPoints: ScreenBreakPoints = GetScreenBreakPoints();
   const { scrollY } = useWindowScrollPositions();
@@ -56,7 +60,8 @@ const Navbar = () => {
             variant="contained"
             onClick={() => navigateTo("/#")}
           >
-            Start Writing
+            Start Writing &nbsp;
+            <EditIcon />
           </NavButtonsContained>
         </ButtonsContainer>
       </NavbarContainer>
