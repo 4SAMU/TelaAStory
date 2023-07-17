@@ -7,6 +7,8 @@ import {
   RelatedArticles,
   RelatedCard,
   ShareContainer,
+  BlogImage,
+  AurthorCardImg,
 } from "@/Components/Blogg/Styles";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar";
@@ -24,13 +26,10 @@ const Blog = () => {
       <BlogContainer>
         <BlogContent>
           <Content>
-            <div>
-              <img
-                src="https://miro.medium.com/v2/resize:fit:720/0*xLIQQ3iLqGqz8LFz"
-                alt="no found"
-                style={{ marginTop: "20px" }}
-              />
-            </div>
+            <BlogImage
+              src="https://miro.medium.com/v2/resize:fit:720/0*xLIQQ3iLqGqz8LFz"
+              alt="no found"
+            />
             <h1>
               How I Eliminated Procrastination From My Life (Using Neuroscience)
             </h1>
@@ -138,6 +137,10 @@ const Blog = () => {
         <AurthorAndRCards_container>
           <Aurthor>
             <h1>Aurthored By:</h1>
+            <AurthorCardImg imageUrl="/HomeImage.jpg">
+              <div className="Avatar"></div>
+              <div className="AuthorName">James</div>
+            </AurthorCardImg>
             <div className="follow">Follow</div>
           </Aurthor>
           <RelatedArticles>
