@@ -139,7 +139,7 @@ const Blog = () => {
             <h1>Aurthored By:</h1>
             <AurthorCardImg imageUrl="/HomeImage.jpg">
               <div className="Avatar"></div>
-              <div className="AuthorName">James</div>
+              <div className="AuthorName">James Mburu</div>
             </AurthorCardImg>
             <div className="follow">Follow</div>
           </Aurthor>
