@@ -1,5 +1,5 @@
 import { ImageProps } from "@/Helpers/Types";
-import { Box, styled } from "@mui/material";
+import { Box, Button, styled } from "@mui/material";
 
 export const BlogContainer = styled(Box)({
   height: "auto",
@@ -24,7 +24,7 @@ export const Content = styled(Box)({
   minHeight: "80vh",
   width: "70%",
   //   background: "yellow",
-  margin: "auto",
+  margin: "auto auto 50px auto",
 
   "& h1": {
     fontSize: "36px",
@@ -82,7 +82,7 @@ export const RelatedArticles = styled(Box)({
   height: "auto",
   minHeight: "20vh !important",
   width: "100%",
-  //   background: "green",
+  // background: "green",
   //   display: "flex",
   //   justifyContent: "center",
 
@@ -94,43 +94,105 @@ export const RelatedArticles = styled(Box)({
   },
 });
 
-export const RelatedCard = styled(Box)({
-  height: "200px",
-  width: "96%",
-  marginLeft: "2%",
-  background: "white",
-  marginTop: "10px",
-  marginBottom: "10px",
-  boxShadow: "5px 0px 20px rgba(0, 0, 0, 0.3)",
-  cursor: "pointer",
+import { useState, useEffect } from "react";
+export const RelatedCard = styled(Box)<ImageProps>(({ imageUrl }) => {
+  const [isDarkBackground, setIsDarkBackground] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.crossOrigin = "anonymous"; // Add the crossOrigin attribute
+    img.src = imageUrl;
+
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      const ctx: any = canvas.getContext("2d");
+
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+
+      const imageData = ctx.getImageData(0, 0, img.width, img.height).data;
+      let totalBrightness = 0;
+
+      for (let i = 0; i < imageData.length; i += 4) {
+        const r = imageData[i];
+        const g = imageData[i + 1];
+        const b = imageData[i + 2];
+
+        // Calculate brightness using the luminance formula
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        totalBrightness += brightness;
+      }
+
+      const averageBrightness = totalBrightness / (img.width * img.height);
+      setIsDarkBackground(averageBrightness < 128);
+    };
+  }, [imageUrl]);
+
+  return {
+    position: "relative",
+    height: "200px",
+    width: "96%",
+    marginLeft: "2%",
+    marginTop: "10px",
+    marginBottom: "10px",
+    boxShadow: "5px 0px 20px rgba(0, 0, 0, 0.3)",
+    cursor: "pointer",
+    background: `url(${imageUrl})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 100%",
+    "& .OvarlayColor": {
+      position: "absolute",
+      bottom: "0",
+      height: "40%",
+      width: "100%",
+      background: isDarkBackground
+        ? "rgba(255, 255, 255, 0.6)"
+        : "rgba(0, 0, 0, 0.4)",
+      backdropFilter: "blur(5px)",
+    },
+    "& .cardContent": {
+      position: "absolute",
+      bottom: "0",
+      height: "40%",
+      width: "100%",
+    },
+    "& .title": {
+      fontSize: "16px",
+      fontFamily: "Open Sans",
+      fontWeight: "600",
+      margin: "10px 0 0 5%",
+      color: !isDarkBackground ? "#FFFFFF" : "#000000",
+    },
+    "& .overview": {
+      fontSize: "14px",
+      fontFamily: "Gotham",
+      fontWeight: "400",
+      margin: "8px 0 0 5%",
+      color: !isDarkBackground ? "#FFFFFF" : "#000000",
+    },
+  };
+});
+
+export const CardImage = styled("img")({
+  height: "100%",
+  width: "100%",
 });
 
 export const Aurthor = styled(Box)({
   position: "relative",
-  height: "200px",
   width: "96%",
   marginLeft: "2%",
   marginTop: "10px",
   marginBottom: "50px",
-  boxShadow: "5px 0px 20px rgba(0, 0, 0, 0.3)",
+  // boxShadow: "5px 0px 20px rgba(0, 0, 0, 0.3)",
   display: "flex",
   flexDirection: "column",
   transition: "all 0.3s ease-in-out",
 
   "& h1": {
     fontSize: "20px",
-    marginLeft: "2%",
-    marginTop: "2%",
-  },
-  "& .follow": {
-    position: "absolute",
-    bottom: "10px",
-    marginLeft: "2%",
-    color: "blue",
-    cursor: "pointer",
-  },
-  "& :hover.follow": {
-    color: "red",
+    marginTop: "5%",
   },
 });
 
@@ -143,17 +205,17 @@ export const BlogImage = styled("img")({
 });
 
 export const AurthorCardImg = styled(Box)<ImageProps>(({ imageUrl }) => ({
-  height: "100px",
+  position: "relative",
   fontFamily: "Open Sans",
   lineHeight: "normal",
   width: "100%",
-  marginTop: "25px",
-  marginLeft: "2%",
+  marginTop: "10px",
   display: "flex",
-  alignItems: "center",
+  // alignItems: "center",
+  gap: "10px",
+  flexDirection: "column",
 
   "& .Avatar": {
-    position: "absolute",
     height: "80px",
     width: "80px",
     borderRadius: "50%",
@@ -161,33 +223,41 @@ export const AurthorCardImg = styled(Box)<ImageProps>(({ imageUrl }) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
   },
-  "& .AuthorName": {
-    position: "absolute",
-    color: "#000",
-    fontSize: "16px",
-    fontStyle: "normal",
-    fontWeight: "600",
-    margin: "0 0 0 90px",
+  "& .follow": {
+    color: "blue",
+    cursor: "pointer",
+    paddingLeft: "5px",
   },
-
-  "& .isVerified": {
-    position: "absolute",
-    color: "#FFF",
-    fontSize: "14px",
-    fontStyle: "italic",
-    fontWeight: "400",
-    margin: "20px 0 10px 45px",
-    paddingLeft: "17px",
-  },
-  "& .isVerified::before": {
-    content: '" "',
-    position: "absolute",
-    left: "0",
-    top: "0",
-    background: `url('Verified.png')`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "100%",
-    height: "16px",
-    width: "16px",
+  "& :hover.follow": {
+    color: "red",
   },
 }));
+
+export const AuthorName = styled(Button)({
+  color: "#000",
+  fontSize: "16px",
+  fontStyle: "normal",
+  fontWeight: "600",
+  textTransform: "capitalize",
+  padding: "5px !important",
+  "&:hover": {
+    background: "none",
+  },
+
+  "&:before": {
+    content: '""',
+    position: "absolute",
+    bottom: "4px",
+    width: "100%",
+    height: "1px",
+    left: "0",
+    background: "#000000",
+    transformOrigin: "bottom right",
+    transition: "transform 0.3s ease-in-out",
+    transform: "scaleX(0)",
+  },
+  "&:hover:before": {
+    transform: "scaleX(1)",
+    transformOrigin: "bottom left",
+  },
+});

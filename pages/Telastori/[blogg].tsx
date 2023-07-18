@@ -9,6 +9,8 @@ import {
   ShareContainer,
   BlogImage,
   AurthorCardImg,
+  AuthorName,
+  CardImage,
 } from "@/Components/Blogg/Styles";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar";
@@ -136,18 +138,38 @@ const Blog = () => {
         </BlogContent>
         <AurthorAndRCards_container>
           <Aurthor>
-            <h1>Aurthored By:</h1>
+            <h1>Aurthor</h1>
             <AurthorCardImg imageUrl="/HomeImage.jpg">
-              <div className="Avatar"></div>
-              <div className="AuthorName">James Mburu</div>
+              <div className="Avatar" />
+              <div>
+                <AuthorName variant="text">James Mburu</AuthorName>
+                <div className="follow">Follow</div>
+              </div>
             </AurthorCardImg>
-            <div className="follow">Follow</div>
           </Aurthor>
           <RelatedArticles>
             <h1>Related Articles</h1>
-            <RelatedCard></RelatedCard>
-            <RelatedCard></RelatedCard>
-            <RelatedCard></RelatedCard>
+            <RelatedCard imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxTPQbQIWrVhXPiD9V0I7yp2HDEyw4STOpPw&usqp=CAU">
+              <div className="OvarlayColor" />
+              <div className="cardContent">
+                <div className="title">Hello we have sea, come and see</div>
+                <div className="overview">Hello we have sea, come and see</div>
+              </div>
+            </RelatedCard>
+            <RelatedCard imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMxD6L-qxl8OH1hZnuYS4ImZMh2ldM0BH4Sg&usqp=CAU">
+              <div className="OvarlayColor" />
+              <div className="cardContent">
+                <div className="title">Hello we have sea, come and see</div>
+                <div className="overview">Hello we have sea, come and see</div>
+              </div>
+            </RelatedCard>
+            <RelatedCard imageUrl="/HomeImage.jpg">
+              <div className="OvarlayColor" />
+              <div className="cardContent">
+                <div className="title">Hello we have sea, come and see</div>
+                <div className="overview">Hello we have sea, come and see</div>
+              </div>
+            </RelatedCard>
           </RelatedArticles>
         </AurthorAndRCards_container>
       </BlogContainer>

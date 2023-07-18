@@ -135,12 +135,6 @@ export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
   },
 }));
 
-// export const CardImage = styled("img")({
-//   height: "100%",
-//   width: "100%",
-//   borderRadius: "inherit",
-// });
-
 export const Author = styled(Box)<ImageProps>(({ imageUrl }) => ({
   position: "absolute",
   height: "45px",
