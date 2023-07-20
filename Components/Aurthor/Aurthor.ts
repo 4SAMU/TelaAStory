@@ -1,4 +1,4 @@
-import { ImageProps } from "@/Helpers/Types";
+import { BackgroundColorProps } from "@/Helpers/Types";
 import { styled, Box, Button } from "@mui/material";
 
 export const WrapperPage = styled(Box)({
@@ -19,46 +19,68 @@ export const AurthorPage = styled(Box)({
   margin: "auto",
 
   "& h1": {
-    marginTop: "50px",
+    marginTop: "20px",
     fontSize: "42px",
     fontWeight: "600",
     fontFamily: "Gotham",
     lineHeight: "54px",
     color: "#000000",
   },
+  "& .followers": {
+    fontSize: "18px",
+    fontWeight: "300",
+    fontFamily: "Gotham",
+    lineHeight: "normal",
+    color: "#000000",
+  },
 });
 
-interface BackgroundColorProps {
-  dominantColor: any;
-}
 export const HeadingComponent = styled(Box)<BackgroundColorProps>(
   ({ dominantColor }) => ({
     height: "150px",
     width: "100%",
-    background: `rgb(${dominantColor?.[0]}, ${dominantColor?.[1]}, ${dominantColor?.[2]})`,
+    background: dominantColor
+      ? `rgba(${dominantColor?.[0]}, ${dominantColor?.[1]}, ${dominantColor?.[2]}, 0.8)`
+      : "rgb(242, 242, 242)",
+    marginTop: "20px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   })
 );
+
+export const HeaderImage = styled("img")({
+  width: "150px",
+  height: "100%",
+  borderRadius: "50%",
+});
+
 export const LineUnder = styled(Box)({
   width: "100%",
   height: "auto",
   borderBottom: "1px solid rgb(242, 242, 242)",
   display: "flex",
   flexDirection: "row",
-  gap: "50px",
-  marginTop: "50px",
+  gap: "15px",
 });
 
 export const AurthorButton = styled(Button)({
-  background: "none",
-  color: "#000000",
-  paddingLeft: "0 !important",
+  background: "rgb(21, 109, 18)",
+  color: "#FFF",
+  textTransform: "capitalize",
+  fontSize: "18px",
+  fontWeight: "300",
+  fontFamily: "Gotham",
+  lineHeight: "normal",
+  borderRadius: "10px",
+  margin: "20px 0",
 
   ":before": {
     content: '""',
     position: "absolute",
     left: "0",
     bottom: "0",
-    background: "#000000",
+    background: "rgb(21, 109, 18)",
     transition: "transform 0.3s ease-in-out",
     width: "100%",
     height: "1px",
@@ -68,6 +90,9 @@ export const AurthorButton = styled(Button)({
   "&:hover:before": {
     transform: "scale(1)",
     transformOrigin: "bottom left",
+  },
+  "&:hover": {
+    color: "rgb(21, 109, 18)",
   },
 });
 

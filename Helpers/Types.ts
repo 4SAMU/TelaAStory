@@ -14,3 +14,7 @@ export interface ScrollPosition {
   scrollX: number;
   scrollY: number;
 }
+
+export interface BackgroundColorProps {
+  dominantColor: any;
+}
