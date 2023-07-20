@@ -11,7 +11,7 @@ export const BigContainer = styled(Box)({
 export const CurvedRectangle = styled(Box)({
   position: "relative",
   width: "100vw",
-  height: "175px",
+  height: "70px",
   backgroundColor: "#0D2436",
   overflow: "hidden",
 
@@ -21,7 +21,7 @@ export const CurvedRectangle = styled(Box)({
     top: 0,
     left: 0,
     width: "100%",
-    height: "88.5px",
+    height: "35px",
     backgroundColor: "#FFF",
     clipPath: "ellipse(50% 100% at 50% 0%)",
   },
@@ -81,4 +81,8 @@ export const StyledTextField = styled(TextField)({
 export const GetStartedBtn = styled(Button)({
   width: "166px",
   height: "56px",
+  background: "#119AB8",
+  ":hover": {
+    background: "rgba(17, 154, 184, 0.8)",
+  },
 });

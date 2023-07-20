@@ -29,7 +29,7 @@ export const NavbarContainer = styled(Box)<ShowNavbarProps>((props) => ({
   width: "100vw",
   display: "flex",
   alignItems: "center",
-  background: "rgba(13, 36, 54, 0.5)",
+  background: "rgb(13, 36, 54)",
   backdropFilter: "blur(10px)",
   zIndex: 20,
   animationDuration: "0.5s",
@@ -103,5 +103,6 @@ export const NavButtonsContained = styled(Button)({
   padding: "10px 35px 10px 35px",
   "&:hover": {
     border: "none",
+    background: "#119AB8",
   },
 });

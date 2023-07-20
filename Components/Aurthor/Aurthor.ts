@@ -70,7 +70,7 @@ export const AurthorButton = styled(Button)({
   color: "#FFF",
   textTransform: "capitalize",
   fontSize: "18px",
-  fontWeight: "300",
+  fontWeight: "400",
   fontFamily: "Gotham",
   lineHeight: "normal",
   borderRadius: "10px",

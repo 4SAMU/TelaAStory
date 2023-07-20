@@ -3,7 +3,7 @@ import { Box, styled } from "@mui/material";
 export const LinksContainer = styled(Box)({
   width: "100vw",
   height: "auto",
-  background: "#0D2436",
+  background: "#000000",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
