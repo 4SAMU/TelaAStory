@@ -22,11 +22,7 @@ const GetOurStories = () => {
           <GetOurStory>
             <h1>Get our stories delivered From us to your inbox weekly.</h1>
             <div className="inputContainer">
-              <StyledTextField
-                id="outlined-basic"
-                label="Your Email"
-                variant="outlined"
-              />
+              <StyledTextField id="outlined-basic" placeholder="Your Email" />
               <GetStartedBtn variant="contained">Get Started</GetStartedBtn>
             </div>
           </GetOurStory>

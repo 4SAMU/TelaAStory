@@ -52,9 +52,10 @@ export const Content = styled(Box)({
 
   "& p": {
     fontSize: "18px",
-    fontFamily: "Gotham",
+    fontFamily: "Roboto",
     marginTop: "20px",
     lineHeight: "30px",
+    fontWeight: 300,
 
     // letterSpacing: "0.01px",
   },
@@ -100,9 +101,6 @@ export const RelatedArticles = styled(Box)({
   height: "auto",
   minHeight: "20vh !important",
   width: "100%",
-  // background: "green",
-  //   display: "flex",
-  //   justifyContent: "center",
 
   "& h1": {
     fontSize: "26px",

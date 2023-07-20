@@ -39,43 +39,37 @@ export const SubContainer = styled(Box)({
 
 export const GetOurStory = styled(Box)({
   width: "80vw",
-  height: "300px",
+  // height: "300px",
   display: "flex",
   flexDirection: "column",
 
   "& h1": {
     color: "#FFF",
     fontFamily: "Gotham",
-    fontSize: "36px",
+    fontSize: "25px",
     fontStyle: "normal",
-    fontWeight: "700",
-    lineHeight: "48px",
+    fontWeight: "600",
+    lineHeight: "37.5px",
     letterSpacing: "0.2px",
-    marginBottom: "60px",
+    marginBottom: "10px",
     display: "flex",
     flexDirection: "column",
     width: "621px",
   },
   "& .inputContainer": {
     display: "flex",
-    // flexDirection: "column",
     gap: "8px",
   },
 });
 
-export const StyledTextField = styled(TextField)({
+export const StyledTextField = styled("input")({
   width: "300px",
-  "& .MuiOutlinedInput-root": {
-    background: "#fff",
-    color: "#fff",
-
-    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      border: "1px solid #fff",
-    },
-  },
-  "& .MuiInputLabel-root.Mui-focused": {
-    color: "#fff",
-  },
+  outline: "none",
+  padding: "0 15px",
+  borderRadius: "4px",
+  border: "none",
+  fontSize: "16px",
+  fontFamily: "Roboto",
 });
 
 export const GetStartedBtn = styled(Button)({

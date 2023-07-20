@@ -16,7 +16,7 @@ export const LinksContainer = styled(Box)({
 
 export const SocialLinks = styled(Box)({
   width: "100vw",
-  minHeight: "200px",
+  minHeight: "80px",
   background: "#0D2436",
   alignItems: "center",
   justifyContent: "center",
@@ -24,7 +24,6 @@ export const SocialLinks = styled(Box)({
   flexDirection: "column",
 
   "& .CopyRight": {
-    // position: "absolute",
     marginBottom: "20px",
     color: "#5A7184",
     textAlign: "center",
