@@ -161,10 +161,7 @@ export const RelatedCard = styled(Box)<ImageProps>(({ imageUrl }) => {
     marginBottom: "15px",
     boxShadow: "5px 0px 20px rgba(0, 0, 0, 0.3)",
     cursor: "pointer",
-    background:
-      imageUrl && !imageLoadingError
-        ? `url(${imageUrl})`
-        : "rgb(242, 242, 242)",
+    background: imageUrl ? `url(${imageUrl})` : "rgb(242, 242, 242)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% 100%",
     borderRadius: "4px",
