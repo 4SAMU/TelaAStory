@@ -119,7 +119,6 @@ export const RelatedCard = styled(Box)<ImageProps>(({ imageUrl }) => {
 
   useEffect(() => {
     const img = new Image();
-    console.log(img);
     img.crossOrigin = "anonymous"; // Add the crossOrigin attribute
     img.src = imageUrl;
 
@@ -208,11 +207,6 @@ export const RelatedCard = styled(Box)<ImageProps>(({ imageUrl }) => {
       overflow: "hidden",
     },
   };
-});
-
-export const CardImage = styled("img")({
-  height: "100%",
-  width: "100%",
 });
 
 export const Aurthor = styled(Box)({

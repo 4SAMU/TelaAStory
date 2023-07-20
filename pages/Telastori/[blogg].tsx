@@ -20,8 +20,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useRouter } from "next/router";
+import { LineUnder } from "@/Components/Aurthor/Aurthor";
 
 const Blog = () => {
+  const router = useRouter();
   return (
     <>
       <Navbar />
@@ -126,6 +129,7 @@ const Blog = () => {
               part 2 initial draft Add scientific studies Write headline Format
               article Proofread & edit article.
             </p>
+            <LineUnder></LineUnder>
           </Content>
           <ShareContainer>
             <div className="icon">
@@ -148,7 +152,12 @@ const Blog = () => {
             <AurthorCardImg imageUrl="/HomeImage.jpg">
               <div className="Avatar" />
               <div>
-                <AuthorName variant="text">James Mburu</AuthorName>
+                <AuthorName
+                  variant="text"
+                  onClick={() => router.push(`/Aurthor/Jamol`)}
+                >
+                  James Mburu
+                </AuthorName>
                 <div className="follow">Follow</div>
               </div>
             </AurthorCardImg>
