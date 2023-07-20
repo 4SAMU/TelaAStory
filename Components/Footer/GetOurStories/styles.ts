@@ -62,7 +62,7 @@ export const GetOurStory = styled(Box)({
   },
 });
 
-export const StyledTextField = styled("input")({
+export const StyledInput = styled("input")({
   width: "300px",
   outline: "none",
   padding: "0 15px",

@@ -4,7 +4,7 @@ import {
   BigContainer,
   SubContainer,
   GetOurStory,
-  StyledTextField,
+  StyledInput,
   GetStartedBtn,
 } from "./styles";
 
@@ -12,8 +12,10 @@ const GetOurStories = () => {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (event: any) => {
+    event.preventDefault();
     setInputValue(event.target.value);
   };
+
   return (
     <>
       <BigContainer>
@@ -22,7 +24,11 @@ const GetOurStories = () => {
           <GetOurStory>
             <h1>Get our stories delivered From us to your inbox weekly.</h1>
             <div className="inputContainer">
-              <StyledTextField id="outlined-basic" placeholder="Your Email" />
+              <StyledInput
+                placeholder="Your Email"
+                value={inputValue}
+                onChange={handleChange}
+              />
               <GetStartedBtn variant="contained">Get Started</GetStartedBtn>
             </div>
           </GetOurStory>
