@@ -46,6 +46,7 @@ export const HeadingComponent = styled(Box)<BackgroundColorProps>(
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    transition: "all 0.3s, 0.3s ease-in-out",
   })
 );
 
