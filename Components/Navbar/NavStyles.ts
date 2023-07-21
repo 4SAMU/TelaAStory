@@ -66,6 +66,9 @@ export const NavLogo = styled("img")({
   marginLeft: "10%",
   height: "55px",
   cursor: "pointer",
+  "@media screen and (max-width: 1535px)": {
+    marginLeft: "5%",
+  },
 });
 
 export const ButtonsContainer = styled(Box)({
@@ -76,6 +79,13 @@ export const ButtonsContainer = styled(Box)({
   right: "20%",
   justifyContent: "space-between",
   gap: "70px",
+  "@media screen and (max-width: 1535px)": {
+    right: "5%",
+    gap: "30px",
+  },
+  "@media screen and (max-width: 899px)": {
+    gap: "10px",
+  },
 });
 
 export const NavButtons = styled(Button)({
@@ -84,9 +94,12 @@ export const NavButtons = styled(Button)({
   fontFamily: "Open Sans",
   fontSize: "16px",
   fontStyle: "normal",
-  fontWeight: "600",
+  // fontWeight: "600px",
   lineHeight: "normal",
   textTransform: "capitalize",
+  "@media screen and (max-width: 899px)": {
+    // fontWeight: "400px",
+  },
 });
 
 export const NavButtonsContained = styled(Button)({

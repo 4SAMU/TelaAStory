@@ -3,21 +3,24 @@ import { Box, Button, styled } from "@mui/material";
 
 export const BlogContainer = styled(Box)({
   height: "auto",
-  minHeight: "80vh",
   width: "100vw",
   background: "#FFF",
   display: "flex",
   flexDirection: "row",
+  minHeight: "calc(100vh - 550px)",
 });
 
 export const BlogContent = styled(Box)({
   height: "auto",
   minHeight: "80vh",
   width: "80%",
-  //   background: "red",
   marginTop: "100px",
   display: "flex",
   flexDirection: "row",
+  // background: "red",
+  "@media screen and (max-width: 1535px)": {
+    width: "75%",
+  },
 });
 
 export const LineBetween = styled(Box)({
@@ -56,8 +59,17 @@ export const Content = styled(Box)({
     marginTop: "20px",
     lineHeight: "30px",
     fontWeight: 300,
+  },
+  "@media screen and (max-width: 1535px)": {
+    width: "80%",
 
-    // letterSpacing: "0.01px",
+    "& h1": {
+      fontSize: "33px",
+    },
+
+    "& p": {
+      fontSize: "17px",
+    },
   },
 });
 export const ShareContainer = styled(Box)({
@@ -88,6 +100,9 @@ export const ShareContainer = styled(Box)({
   "& :hover.icon": {
     color: "#FFFFFF",
   },
+  "@media screen and (max-width: 1535px)": {
+    right: "2%",
+  },
 });
 
 export const AurthorAndRCards_container = styled(Box)({
@@ -95,6 +110,9 @@ export const AurthorAndRCards_container = styled(Box)({
   right: "0",
   width: "20%",
   marginTop: "120px",
+  "@media screen and (max-width: 1535px)": {
+    width: "24%",
+  },
 });
 
 export const RelatedArticles = styled(Box)({

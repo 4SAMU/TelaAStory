@@ -5,15 +5,14 @@ export const WrapperPage = styled(Box)({
   position: "relative",
   width: "100%",
   height: "auto",
-  display: "flex",
+  // display: "flex",
   margin: "100px 0",
-  // background: "green",
+  minHeight: "calc(100vh - 550px)",
 });
 export const AurthorPage = styled(Box)({
   //   marginTop: "100px",
   width: "50%",
   height: "auto",
-  // background: "red",
   display: "flex",
   flexDirection: "column",
   margin: "auto",
@@ -32,6 +31,12 @@ export const AurthorPage = styled(Box)({
     fontFamily: "Gotham",
     lineHeight: "normal",
     color: "#000000",
+  },
+  "@media screen and (max-width: 1535px)": {
+    width: "80%",
+  },
+  "@media screen and (max-width: 899px)": {
+    width: "95%",
   },
 });
 
@@ -103,12 +108,22 @@ export const AurthorsStoriesWrap = styled(Box)({
   width: "750px",
   justifyContent: "space-between",
   alignItems: "center",
+  borderBottom: "1px solid rgb(242, 242, 242)",
+
+  "@media screen and (max-width: 1535px)": {
+    width: "85%",
+  },
+  "@media screen and (max-width: 1199px)": {
+    gap: "15px",
+  },
+  "@media screen and (max-width: 899px)": {
+    width: "100%",
+  },
 });
 
 export const AurthorsStories = styled(Box)({
   width: "520px",
   height: "auto",
-  borderBottom: "1px solid rgb(242, 242, 242)",
   display: "flex",
   flexDirection: "column",
   marginTop: "50px",

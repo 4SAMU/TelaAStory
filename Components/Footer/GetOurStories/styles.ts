@@ -39,7 +39,6 @@ export const SubContainer = styled(Box)({
 
 export const GetOurStory = styled(Box)({
   width: "80vw",
-  // height: "300px",
   display: "flex",
   flexDirection: "column",
 
