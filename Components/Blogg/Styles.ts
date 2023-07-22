@@ -81,7 +81,7 @@ export const Content = styled(Box)({
     "& h1": {
       fontSize: "33px",
     },
- 
+
     "& p": {
       fontSize: "17px",
     },
@@ -91,7 +91,6 @@ export const Content = styled(Box)({
     width: "calc(90% - 50px)",
     "& h1": {
       fontSize: "24px",
-      lineHeight: "30px",
       overflowWrap: "break-word",
     },
   },
