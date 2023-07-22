@@ -10,6 +10,10 @@ export const HomeContainer = styled(Box)({
   background: "url('/HomeImage.png')",
   backgroundRepeat: "no-repeat",
   backgroundSize: "100% 973px",
+  "@media screen and (max-width: 599px)": {
+    // background: "red",
+    height: "650px",
+  },
 });
 
 export const Wave = styled(Box)({

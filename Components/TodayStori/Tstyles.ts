@@ -14,7 +14,7 @@ export const TodayStoriContainer = styled(Box)({
 export const FeaturedBlog = styled(Box)({
   position: "absolute",
   width: "1140px",
-  height: "380px",
+  minHeight: "380px",
   bottom: "0px",
   zIndex: 10,
   borderRadius: "16px",
@@ -27,10 +27,14 @@ export const FeaturedBlog = styled(Box)({
   backgroundPosition: "left center",
   backgroundSize: "50% 100%",
   cursor: "pointer",
+
+  "@media screen and (max-width: 1199px)": {
+    width: "95%",
+  },
 });
 
 export const FeaturedContent = styled(Box)({
-  position: "absolute",
+  // position: "absolute",
   width: "50% ",
   marginLeft: "50%",
   height: "100%",
@@ -77,7 +81,7 @@ export const FeaturedContent = styled(Box)({
 });
 
 export const Author = styled(Box)({
-  position: "absolute",
+  // position: "absolute",
   margin: "40px 0 0 32px",
   height: "45px",
   fontFamily: "Open Sans",
@@ -110,14 +114,13 @@ export const Author = styled(Box)({
     margin: "20px 0 10px 45px",
   },
   "& h4": {
-    position: "absolute",
+    // position: "absolute",
     color: "#5A7184",
     fontSize: "14px",
     fontStyle: "italic",
     fontWeight: "400",
     lineHeight: "normal",
-    right: "0",
-    margin: "10px 0 0 0",
+    margin: "30px 0 0 150px",
   },
 });
 
