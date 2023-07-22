@@ -21,10 +21,13 @@ export const BlogContent = styled(Box)({
   "@media screen and (max-width: 1535px)": {
     width: "75%",
   },
+  "@media screen and (max-width: 599px)": {
+    width: "100%",
+  },
 });
 
 export const LineBetween = styled(Box)({
-  height: "40px",
+  minHeight: "40px",
   width: "100%",
   background: "none",
   marginTop: "20px",
@@ -38,6 +41,18 @@ export const LineBetween = styled(Box)({
     color: "rgb(107, 107, 107)",
     fontFamily: "Roboto",
     fontWeight: 200,
+  },
+
+  "& .TimeReadContainer": {
+    display: "flex",
+    flexDirection: "row",
+    gap: "30px",
+    marginTop: "5px",
+  },
+  "@media screen and (max-width: 599px)": {
+    flexDirection: "column",
+    alignItems: "initial",
+    gap: "5px",
   },
 });
 
@@ -66,9 +81,18 @@ export const Content = styled(Box)({
     "& h1": {
       fontSize: "33px",
     },
-
+ 
     "& p": {
       fontSize: "17px",
+    },
+  },
+  "@media screen and (max-width: 599px)": {
+    // marginLeft: "3%",
+    width: "calc(90% - 50px)",
+    "& h1": {
+      fontSize: "24px",
+      lineHeight: "30px",
+      overflowWrap: "break-word",
     },
   },
 });
@@ -103,6 +127,9 @@ export const ShareContainer = styled(Box)({
   "@media screen and (max-width: 1535px)": {
     right: "2%",
   },
+  "@media screen and (max-width: 599px)": {
+    right: "3%",
+  },
 });
 
 export const AurthorAndRCards_container = styled(Box)({
@@ -112,6 +139,9 @@ export const AurthorAndRCards_container = styled(Box)({
   marginTop: "120px",
   "@media screen and (max-width: 1535px)": {
     width: "24%",
+  },
+  "@media screen and (max-width: 599px)": {
+    // background: "red",
   },
 });
 
@@ -254,7 +284,6 @@ export const AurthorCardImg = styled(Box)<ImageProps>(({ imageUrl }) => ({
   width: "100%",
   marginTop: "10px",
   display: "flex",
-  // alignItems: "center",
   gap: "10px",
   flexDirection: "column",
 
@@ -273,6 +302,11 @@ export const AurthorCardImg = styled(Box)<ImageProps>(({ imageUrl }) => ({
   },
   "& :hover.follow": {
     color: "red",
+  },
+
+  "@media screen and (max-width: 599px)": {
+    alignItems: "center",
+    flexDirection: "row",
   },
 }));
 
