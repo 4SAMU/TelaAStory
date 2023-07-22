@@ -84,7 +84,7 @@ export const ButtonsContainer = styled(Box)({
     gap: "30px",
   },
   "@media screen and (max-width: 899px)": {
-    gap: "10px",
+    display: "none",
   },
 });
 
@@ -94,7 +94,6 @@ export const NavButtons = styled(Button)({
   fontFamily: "Open Sans",
   fontSize: "16px",
   fontStyle: "normal",
-  // fontWeight: "600px",
   lineHeight: "normal",
   textTransform: "capitalize",
   "@media screen and (max-width: 899px)": {

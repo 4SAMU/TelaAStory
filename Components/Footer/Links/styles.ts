@@ -33,4 +33,10 @@ export const SocialLinks = styled(Box)({
     fontWeight: "600",
     lineHeight: "normal",
   },
+  "@media screen and (max-width: 360px)": {
+    "& .CopyRight": {
+      fontSize: "14px",
+      fontWeight: "300",
+    },
+  },
 });

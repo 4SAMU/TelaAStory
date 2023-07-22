@@ -4,9 +4,6 @@ TelaAstori is a blog dedicated to storytelling and imagination. It aims to provi
 
 ## Acknowledgments
 
-
 ## Contact
 
 For any inquiries or feedback, please reach out to us at contact@telaastori.com.
-
-

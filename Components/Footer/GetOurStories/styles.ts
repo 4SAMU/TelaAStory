@@ -59,6 +59,34 @@ export const GetOurStory = styled(Box)({
     display: "flex",
     gap: "8px",
   },
+  "@media screen and (max-width: 1535px)": {
+    "& h1": {
+      width: "fit-content",
+    },
+  },
+  "@media screen and (max-width: 1199px)": {
+    "& h1": {
+      fontSize: "24px",
+    },
+  },
+  "@media screen and (max-width: 899px)": {
+    width: "90vw",
+    "& h1": {
+      fontSize: "23px",
+    },
+  },
+  "@media screen and (max-width: 599px)": {
+    "& h1": {
+      fontSize: "18px",
+    },
+  },
+  "@media screen and (max-width: 360px)": {
+    marginBottom: "10px",
+    "& .inputContainer": {
+      gap: "8px",
+      flexDirection: "column",
+    },
+  },
 });
 
 export const StyledInput = styled("input")({
@@ -69,6 +97,11 @@ export const StyledInput = styled("input")({
   border: "none",
   fontSize: "16px",
   fontFamily: "Roboto",
+
+  "@media screen and (max-width: 360px)": {
+    height: "45px",
+    width: "95%",
+  },
 });
 
 export const GetStartedBtn = styled(Button)({
@@ -77,5 +110,9 @@ export const GetStartedBtn = styled(Button)({
   background: "#119AB8",
   ":hover": {
     background: "rgba(17, 154, 184, 0.8)",
+  },
+  "@media screen and (max-width: 360px)": {
+    height: "45px",
+    width: "95%",
   },
 });
