@@ -120,7 +120,7 @@ const slideLeft = keyframes({
 
 export const DrawerContainer = styled(Box)<DrawerContainerProps>`
   position: fixed;
-  top: 94px;
+  top: 101px;
   width: 100vw;
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
