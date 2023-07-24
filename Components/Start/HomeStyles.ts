@@ -4,15 +4,17 @@ import { styled } from "styled-components";
 export const HomeContainer = styled(Box)({
   position: "relative",
   width: "100vw",
-  top: "0",
+  top: "100px",
   height: "973px",
   // display: "flex",
   background: "url('/HomeImage.png')",
   backgroundRepeat: "no-repeat",
-  backgroundSize: "100% 973px",
+  backgroundSize: "100% 100%",
   "@media screen and (max-width: 599px)": {
-    // background: "red",
-    height: "650px",
+    background: "url('/MobileHome.png')",
+    height: "500px",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 100%",
   },
 });
 

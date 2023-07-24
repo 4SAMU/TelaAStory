@@ -32,6 +32,7 @@ export const FeaturedBlog = styled(Box)({
   },
   "@media screen and (max-width: 599px)": {
     backgroundSize: "100% 100%",
+    width: "98%",
   },
 });
 
@@ -40,8 +41,7 @@ export const FeaturedContent = styled("div")({
   width: "50% ",
   marginLeft: "50%",
   height: "inherit",
-  borderRadius: "0 16px 16px 0", //top-left top-right bottom-right bottom-left
-
+  borderRadius: "0 16px 16px 0",
   fontFamily: "Open Sans",
   fontStyle: "normal",
   lineHeight: "normal",
@@ -106,7 +106,7 @@ export const FeaturedContent = styled("div")({
     minHeight: "380px",
     background: "rgba(255, 255, 255, 0.5)",
     backdropFilter: "blur(5px)",
-    borderRadius: "0 0 0 0",
+    // borderRadius: "0 0 0 0",
     padding: "5px",
     "& h1": {
       fontSize: "16px",

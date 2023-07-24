@@ -63,10 +63,12 @@ export const HeaderBox = styled(Box)({
     "& h1": {
       position: "relative",
       marginLeft: "2%",
+      fontSize: "24px",
     },
     "& h2": {
       position: "relative",
       marginLeft: "2%",
+      fontSize: "16px",
     },
   },
 });
@@ -169,6 +171,10 @@ export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
     fontWeight: "700",
     lineHeight: "36px",
     letterSpacing: "0.2px",
+    display: "-webkit-box",
+    WebkitLineClamp: "2",
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
   },
   "& .CardDescrip": {
     color: "#FFF",
@@ -178,6 +184,10 @@ export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
     fontWeight: "400",
     lineHeight: "30px",
     marginTop: "25px",
+    display: "-webkit-box",
+    WebkitLineClamp: "2",
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
   },
   "@media screen and (max-width: 1199px)": {
     height: "400px",
@@ -185,6 +195,25 @@ export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
   },
   "@media screen and (max-width: 699px)": {
     width: "100%",
+    "& .CardDataWrapper": {
+      height: "200px",
+    },
+    "& .CardName": {
+      fontSize: "18px",
+      lineHeight: "normal",
+    },
+    "& .CardDescrip": {
+      fontSize: "16px",
+      lineHeight: "normal",
+      marginTop: "5px",
+    },
+  },
+  "@media screen and (max-width: 599px)": {
+    width: "100%",
+    "& .CardDataWrapper": {
+      width: "100%",
+      paddingLeft: "5%",
+    },
   },
 }));
 
@@ -242,6 +271,17 @@ export const Author = styled(Box)<ImageProps>(({ imageUrl }) => ({
     fontWeight: "400",
     right: "0",
     margin: "10px 0 0 0",
+  },
+
+  "@media screen and (max-width: 699px)": {
+    marginTop: "25px",
+  },
+  "@media screen and (max-width: 599px)": {
+    marginTop: "25px",
+    "& .time": {
+      right: "20px",
+      paddingRight: "10%",
+    },
   },
 }));
 
