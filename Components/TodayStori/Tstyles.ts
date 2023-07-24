@@ -1,5 +1,4 @@
-import { Box } from "@mui/material";
-import { styled } from "styled-components";
+import { styled, Box } from "@mui/material";
 
 export const TodayStoriContainer = styled(Box)({
   position: "relative",
@@ -31,18 +30,22 @@ export const FeaturedBlog = styled(Box)({
   "@media screen and (max-width: 1199px)": {
     width: "95%",
   },
+  "@media screen and (max-width: 599px)": {
+    backgroundSize: "100% 100%",
+  },
 });
 
-export const FeaturedContent = styled(Box)({
-  // position: "absolute",
+export const FeaturedContent = styled("div")({
+  position: "relative",
   width: "50% ",
   marginLeft: "50%",
-  height: "100%",
+  height: "inherit",
   borderRadius: "0 16px 16px 0", //top-left top-right bottom-right bottom-left
 
   fontFamily: "Open Sans",
   fontStyle: "normal",
   lineHeight: "normal",
+  background: "none",
 
   "& div.featured": {
     color: "#1565D8",
@@ -77,13 +80,48 @@ export const FeaturedContent = styled(Box)({
     lineHeight: "32px",
     margin: "20px 0 0 32px",
     width: "80%",
+    display: "-webkit-box",
+    WebkitLineClamp: "2",
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+  },
+  "@media screen and (max-width: 899px)": {
+    "& div.featured": {
+      marginLeft: "5%",
+    },
+
+    "& h1": {
+      fontSize: "18px",
+      marginLeft: "5%",
+    },
+    "& p": {
+      fontSize: "16px",
+      lineHeight: "22px",
+      marginLeft: "5%",
+    },
+  },
+  "@media screen and (max-width: 599px)": {
+    width: "60% ",
+    marginLeft: "40%",
+    minHeight: "380px",
+    background: "rgba(255, 255, 255, 0.5)",
+    backdropFilter: "blur(5px)",
+    borderRadius: "0 0 0 0",
+    padding: "5px",
+    "& h1": {
+      fontSize: "16px",
+    },
+    "& p": {
+      fontSize: "14px",
+      lineHeight: "22px",
+    },
   },
 });
 
 export const Author = styled(Box)({
   // position: "absolute",
   margin: "40px 0 0 32px",
-  height: "45px",
+  minHeight: "45px",
   fontFamily: "Open Sans",
   width: "80%",
 
@@ -114,13 +152,33 @@ export const Author = styled(Box)({
     margin: "20px 0 10px 45px",
   },
   "& h4": {
-    // position: "absolute",
+    position: "absolute",
     color: "#5A7184",
     fontSize: "14px",
     fontStyle: "italic",
     fontWeight: "400",
     lineHeight: "normal",
-    margin: "30px 0 0 150px",
+    margin: "0px 0 0 150px",
+  },
+  "@media screen and (max-width: 599px)": {
+    margin: "5px 0 0 5%",
+
+    "& div.user": {
+      position: "relative",
+      margin: "5px 0 0 0",
+    },
+    "& h2": {
+      position: "relative",
+      margin: "5px 0 0 0",
+    },
+    "& h3": {
+      position: "relative",
+      margin: "5px 0 0 0",
+    },
+    "& h4": {
+      position: "relative",
+      margin: "5px 0 0 0",
+    },
   },
 });
 

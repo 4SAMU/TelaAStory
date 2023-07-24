@@ -38,8 +38,8 @@ const TodayStori = () => {
             <Author>
               <div className="user"></div>
               <h2>Viola</h2>
-              <h3>Verified writer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02 May 2022</h3>
-              {/* <h4>02 May 2022</h4> */}
+              <h3>Verified writer</h3>
+              <h4>02 May 2022</h4>
             </Author>
           </FeaturedContent>
         </FeaturedBlog>
