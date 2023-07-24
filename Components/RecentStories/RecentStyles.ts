@@ -55,6 +55,11 @@ export const HeaderBox = styled(Box)({
     bottom: "0",
     left: "0",
   },
+  "@media screen and (max-width: 899px)": {
+    "& h2": {
+      padding: "5px",
+    },
+  },
   "@media screen and (max-width: 599px)": {
     position: "relative",
     display: "flex",
