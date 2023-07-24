@@ -33,6 +33,7 @@ export const FeaturedBlog = styled(Box)({
   "@media screen and (max-width: 599px)": {
     backgroundSize: "100% 100%",
     width: "98%",
+    bottom: "-50px",
   },
 });
 
