@@ -231,8 +231,8 @@ export const RelatedCard = styled(Box)<ImageProps>(({ imageUrl }) => {
       lineHeight: "18px",
       color: !isDarkBackground ? "#FFFFFF" : "#000000",
       display: "-webkit-box",
-      "-webkit-line-clamp": "2",
-      "-webkit-box-orient": "vertical",
+      // WebkitLineClamp: "2",
+      // WebkitBoxOrient: "vertical",
       overflow: "hidden",
     },
     "& .overview": {
@@ -244,8 +244,8 @@ export const RelatedCard = styled(Box)<ImageProps>(({ imageUrl }) => {
       margin: "8px 0 0 0",
       color: !isDarkBackground ? "#FFFFFF" : "#000000",
       display: "-webkit-box",
-      "-webkit-line-clamp": "2",
-      "-webkit-box-orient": "vertical",
+      WebkitLineClamp: "2",
+      WebkitBoxOrient: "vertical",
       overflow: "hidden",
     },
   };

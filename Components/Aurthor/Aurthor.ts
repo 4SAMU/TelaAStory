@@ -37,6 +37,12 @@ export const AurthorPage = styled(Box)({
   },
   "@media screen and (max-width: 899px)": {
     width: "95%",
+    "& h1": {
+      fontSize: "26px",
+    },
+    "& .followers": {
+      fontSize: "16px",
+    },
   },
 });
 
@@ -110,14 +116,15 @@ export const AurthorsStoriesWrap = styled(Box)({
   alignItems: "center",
   borderBottom: "1px solid rgb(242, 242, 242)",
 
-  "@media screen and (max-width: 1535px)": {
-    width: "85%",
-  },
+  // "@media screen and (max-width: 1535px)": {
+  //   width: "85%",
+  // },
   "@media screen and (max-width: 1199px)": {
     gap: "15px",
   },
   "@media screen and (max-width: 899px)": {
     width: "100%",
+    justifyContent: "center",
   },
 });
 
@@ -140,8 +147,8 @@ export const AurthorsStories = styled(Box)({
     lineHeight: "24px",
     color: "#000000",
     display: "-webkit-box",
-    "-webkit-line-clamp": "2",
-    "-webkit-box-orient": "vertical",
+    // WebkitLineClamp: "2",
+    // WebkitBoxOrient: "vertical",
     overflow: "hidden",
     margin: "8px 0 0 0",
   },
@@ -154,9 +161,28 @@ export const AurthorsStories = styled(Box)({
     margin: "8px 0 0 0",
     color: "#000000",
     display: "-webkit-box",
-    "-webkit-line-clamp": "2",
-    "-webkit-box-orient": "vertical",
+    WebkitLineClamp: "2",
+    WebkitBoxOrient: "vertical",
     overflow: "hidden",
+  },
+  "@media screen and (max-width: 1199px)": {
+    marginTop: "25px",
+    "& .title": {
+      fontSize: "18px",
+      lineHeight: "23px",
+    },
+  },
+  "@media screen and (max-width: 899px)": {
+    "& .title": {
+      fontSize: "16px",
+      lineHeight: "20px",
+      margin: "5px 0 0 0",
+    },
+    "& .overview": {
+      fontSize: "15px",
+      lineHeight: "normal",
+      margin: "5px 0 0 0",
+    },
   },
 });
 
@@ -190,4 +216,9 @@ export const CardImage = styled("img")({
   height: "120px",
   width: "120px",
   marginTop: "20px",
+  "@media screen and (max-width: 899px)": {
+    height: "100px",
+    width: "100px",
+    marginTop: "10px",
+  },
 });

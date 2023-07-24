@@ -232,9 +232,9 @@ const Blog = () => {
                     </div>
                     <div className="overview">
                       Procrastination is a big problem for many of us. We say
-                      we’ll work on our goals, hit the gym, or learn some new
+                      we&#39;ll work on our goals, hit the gym, or learn some new
                       skills, only to end up watching Netflix instead. I used to
-                      be a chronic procrastinator too. I’d set big goals and
+                      be a chronic procrastinator too. I&#39;d set big goals and
                       make ambitious plans, but not much was getting done on a
                       day-to-day basis.
                     </div>

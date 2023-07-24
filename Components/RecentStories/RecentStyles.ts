@@ -1,6 +1,5 @@
 import { ImageProps } from "@/Helpers/Types";
-import { Box, Button } from "@mui/material";
-import { styled } from "styled-components";
+import { styled, Box, Button } from "@mui/material";
 
 export const RecentContainer = styled(Box)({
   position: "relative",
@@ -18,12 +17,18 @@ export const RecentContainer = styled(Box)({
     // background: "green",
     margin: "96px auto auto auto",
   },
+
+  "@media screen and (max-width: 1199px)": {
+    "& div.wrapper": {
+      width: "98%",
+    },
+  },
 });
 
 export const HeaderBox = styled(Box)({
   position: "relative",
   // background: "yellow",
-  height: "96px",
+  minHeight: "96px",
   width: "100%",
   transition: "all 0.3s, 0.3s ease-in-out",
 
@@ -50,6 +55,20 @@ export const HeaderBox = styled(Box)({
     bottom: "0",
     left: "0",
   },
+  "@media screen and (max-width: 599px)": {
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+
+    "& h1": {
+      position: "relative",
+      marginLeft: "2%",
+    },
+    "& h2": {
+      position: "relative",
+      marginLeft: "2%",
+    },
+  },
 });
 
 export const ViewAllBtn = styled(Box)({
@@ -57,6 +76,16 @@ export const ViewAllBtn = styled(Box)({
   bottom: "0 ",
   right: "0",
   transition: "all 0.3s, 0.3s ease-in-out",
+  "@media screen and (max-width: 1199px)": {
+    right: "3%",
+  },
+  "@media screen and (max-width: 599px)": {
+    position: "relative",
+    bottom: "auto",
+    right: "auto",
+    marginTop: "4px",
+    marginLeft: "2%",
+  },
 });
 
 export const ViewAll = styled(Button)({
@@ -71,6 +100,12 @@ export const ViewAll = styled(Button)({
   width: "fit-content !important",
   height: " 48px !important",
   transition: "all 0.3s, 0.3s ease-in-out",
+
+  "@media screen and (max-width: 599px)": {
+    height: "40px !important",
+    marginTop: "2px",
+    fontSize: "15px !important",
+  },
 });
 
 export const CardContainer = styled(Box)({
@@ -84,6 +119,17 @@ export const CardContainer = styled(Box)({
   overflowY: "scroll",
   overflowX: "hidden",
   transition: "all 0.3s, 0.3s ease-in-out",
+  "@media screen and (max-width: 899px)": {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+  },
+  "@media screen and (max-width: 599px)": {
+    marginTop: "20px",
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+  },
 });
 
 export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
@@ -132,6 +178,13 @@ export const Cards = styled(Box)<ImageProps>(({ imageUrl }) => ({
     fontWeight: "400",
     lineHeight: "30px",
     marginTop: "25px",
+  },
+  "@media screen and (max-width: 1199px)": {
+    height: "400px",
+    width: "320px",
+  },
+  "@media screen and (max-width: 699px)": {
+    width: "100%",
   },
 }));
 
