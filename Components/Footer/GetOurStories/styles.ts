@@ -12,7 +12,6 @@ export const CurvedRectangle = styled(Box)({
   position: "relative",
   width: "100vw",
   height: "70px",
-  backgroundColor: "#0D2436",
   overflow: "hidden",
 
   "&::before": {
@@ -31,7 +30,6 @@ export const SubContainer = styled(Box)({
   width: "100vw",
   minHeight: "200px !important",
   height: "auto",
-  background: "#0D2436",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

@@ -26,6 +26,7 @@ export function GetScreenBreakPoints(): ScreenBreakPoints {
   const isNextHub = useMediaQuery(theme.breakpoints.only("md")); //901px - 1199px
   const isLaptop = useMediaQuery(theme.breakpoints.only("lg")); //1200px - 1535px
   const isDesktop = useMediaQuery(theme.breakpoints.only("xl")); //1535px and above
+  const isCustomBreakPoint = useMediaQuery(theme.breakpoints.up(899));
 
   return {
     isPhone,
@@ -33,5 +34,6 @@ export function GetScreenBreakPoints(): ScreenBreakPoints {
     isNextHub,
     isLaptop,
     isDesktop,
+    isCustomBreakPoint,
   };
 }

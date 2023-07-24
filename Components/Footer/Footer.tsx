@@ -4,8 +4,10 @@ import Links from "./Links/Links";
 const Footer = () => {
   return (
     <>
-      <GetOurStories />
-      <Links />
+      <div className="FooterContainer">
+        <GetOurStories />
+        <Links />
+      </div>
     </>
   );
 };

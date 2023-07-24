@@ -4,8 +4,16 @@ export interface ScreenBreakPoints {
   isNextHub: boolean;
   isLaptop: boolean;
   isDesktop: boolean;
+  isCustomBreakPoint: boolean;
 }
 
+export interface mediaQueryProps {
+  issm: boolean;
+  ismd: boolean;
+}
+export interface DrawerContainerProps {
+  isOpen: boolean;
+}
 export interface ImageProps {
   imageUrl: string;
 }

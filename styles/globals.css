@@ -46,6 +46,6 @@ a {
   font-display: swap;
 }
 
-/* @media screen and (max-width: 1535px) {
-  
-} */
+.FooterContainer {
+  background: linear-gradient(167deg, #119ab8 0%, #0d2436 100%);
+}
