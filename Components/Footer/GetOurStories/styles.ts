@@ -78,7 +78,7 @@ export const GetOurStory = styled(Box)({
       fontSize: "18px",
     },
   },
-  "@media screen and (max-width: 360px)": {
+  "@media screen and (max-width: 420px)": {
     marginBottom: "10px",
     "& .inputContainer": {
       gap: "8px",
@@ -96,7 +96,7 @@ export const StyledInput = styled("input")({
   fontSize: "16px",
   fontFamily: "Roboto",
 
-  "@media screen and (max-width: 360px)": {
+  "@media screen and (max-width: 420px)": {
     height: "45px",
     width: "95%",
   },
@@ -109,7 +109,7 @@ export const GetStartedBtn = styled(Button)({
   ":hover": {
     background: "rgba(17, 154, 184, 0.8)",
   },
-  "@media screen and (max-width: 360px)": {
+  "@media screen and (max-width: 420px)": {
     height: "45px",
     width: "95%",
   },
