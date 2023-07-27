@@ -26,3 +26,26 @@ export interface ScrollPosition {
 export interface BackgroundColorProps {
   dominantColor: any;
 }
+
+export interface AuthorData {
+  name: string;
+  image: string;
+  bio?: {
+    children: {
+      text: string;
+    }[];
+  }[];
+}
+
+//Blog post data from sanity
+export interface PostData {
+  _id: string;
+  title: string;
+  body: string;
+  author: AuthorData;
+  categories: string[];
+  mainImage: string;
+  publishedAt: string;
+  slug: string;
+  relatedArticlesData: any;
+}

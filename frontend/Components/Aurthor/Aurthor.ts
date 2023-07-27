@@ -222,3 +222,4 @@ export const CardImage = styled("img")({
     marginTop: "10px",
   },
 });
+
