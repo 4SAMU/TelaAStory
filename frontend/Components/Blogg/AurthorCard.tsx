@@ -4,7 +4,6 @@ import { GetScreenBreakPoints } from "@/Helpers/MediaQueries";
 
 const AurthorCard = (props: any) => {
   const { aurthorData } = props;
-  console.log("Data", aurthorData);
   const router = useRouter();
   const { isPhone } = GetScreenBreakPoints();
 

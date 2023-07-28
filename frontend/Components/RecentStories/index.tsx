@@ -38,17 +38,22 @@ const RecentStories = () => {
         title,
         body,
         "slug": slug.current,
-        "author": author->{name, "avatar": avatar.asset->url},
+        "author": author->{name, "image": image.asset->url, slug, bio},
         "categories": categories[]->title,
         "mainImage": mainImage.asset->url,
         publishedAt
       }
       `);
       setBlogPosts(response);
+      console.log("response", response);
     }
 
     fetchPosts();
   }, []);
+
+  if (blogPosts.length === 0 || !blogPosts) {
+    return null;
+  }
 
   return (
     <RecentContainer>
