@@ -90,9 +90,9 @@ const RecentStories = () => {
                     dataset={`${PUBLIC_DATASET}`}
                   />
                 </div>
-                <Author imageUrl={card?.author.name}>
+                <Author imageUrl={card?.author.image}>
                   <div className="Avatar"></div>
-                  <div className="AuthorName">{card?.author.image}</div>
+                  <div className="AuthorName">{card?.author.name}</div>
                   {/* {card.isVerified && (
                     <div className="isVerified">Verified Writer</div>
                   )} */}
