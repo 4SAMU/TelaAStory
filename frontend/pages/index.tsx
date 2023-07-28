@@ -9,6 +9,9 @@ export default function Home() {
   useEffect(() => {
     setIsServer(true);
   }, []);
+
+
+  
   return (
     <>
       <Head>
