@@ -9,7 +9,12 @@ const RelatedCardComponent = (props: any) => {
   const PROJECTID = process.env.NEXT_PUBLIC_PROJECTID;
   const PUBLIC_DATASET = process.env.NEXT_PUBLIC_DATASET;
 
-  if (relatedArticlesData.length === 0) {
+  if (
+    relatedArticlesData?.length === 0 ||
+    !relatedArticlesData ||
+    relatedArticlesData === undefined ||
+    relatedArticlesData === null
+  ) {
     return null;
   }
 

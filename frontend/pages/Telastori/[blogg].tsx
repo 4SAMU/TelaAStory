@@ -29,12 +29,17 @@ import BlockContent from "@sanity/block-content-to-react";
 import { PostData } from "@/Helpers/Types";
 import { getReadingTime } from "@/Helpers/TimeRead";
 import { getDateFormat } from "@/Helpers/DateFormat";
+import SocialMediaHelmet from "@/Components/SocialMediaHelmet";
 
 const Blog = () => {
   const { isPhone } = GetScreenBreakPoints();
   const router = useRouter();
   const { blogg } = router.query;
   const [postData, setPostData] = useState<PostData | null>(null);
+  const [relatedArticlesData, setRelatedArticlesData] = useState<
+    PostData[] | null
+  >(null);
+  const [categoryTitles, setCategories] = useState("");
   const PROJECTID = process.env.NEXT_PUBLIC_PROJECTID;
   const PUBLIC_DATASET = process.env.NEXT_PUBLIC_DATASET;
 
@@ -54,25 +59,10 @@ const Blog = () => {
           }`,
           { blogg }
         );
-
-        const [categoryTitles] = post?.categories;
-
-        const relatedArticlesData = await client.fetch(
-          `*[_type == "post" 
-            && slug.current != $blogg 
-            && $categoryTitles in categories[]->title
-          ][0...3]{
-            _id,
-            title,
-            body,
-            slug,
-            "categories": categories[]->title,
-            "mainImage": mainImage.asset->url,
-          }`,
-          { blogg, categoryTitles }
-        );
-
-        setPostData({ ...post, relatedArticlesData });
+        setPostData(post);
+        const [categoryTitles] = post.categories;
+        console.log("categoryTitles", categoryTitles);
+        setCategories(categoryTitles);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -83,31 +73,62 @@ const Blog = () => {
     }
   }, [blogg]);
 
-  if (!postData) {
-    return null;
-  }
+  useEffect(() => {
+    const fetchRelatedArticles = async () => {
+      try {
+        const relatedArticlesData = await client.fetch(
+          `*[_type == "post" 
+        && slug.current != $blogg 
+        ${categoryTitles ? `&& $categoryTitles in categories[]->title` : ``}
+      ][0...3]{
+        _id,
+        title,
+        body,
+        slug,
+        "categories": categories[]->title,
+        "mainImage": mainImage.asset->url,
+      }`,
+          { blogg, categoryTitles }
+        );
+        setRelatedArticlesData(relatedArticlesData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    if (blogg) {
+      fetchRelatedArticles();
+    }
+  }, [categoryTitles, blogg]);
 
   return (
     <>
+      <SocialMediaHelmet
+        title={postData?.title}
+        description={postData?.title}
+        imageUrl={postData?.mainImage}
+        url={`https://telastori.vercel.app/Telastor/${postData?.slug}`}
+      />
       <Navbar />
       <BlogContainer>
         <BlogContent>
           <Content>
             <h1>{postData?.title}</h1>
-            <LineBetween>
-              {/* {postData.relatedArticlesData&&("")} */}
-              {isPhone && <AurthorCard aurthorData={postData.author} />}
+            {postData && (
+              <LineBetween>
+                {isPhone && <AurthorCard aurthorData={postData?.author} />}
+                <div className="TimeReadContainer">
+                  <div className="MinsRead">
+                    {getReadingTime(postData?.body)} Min Read
+                  </div>
+                  <div className="MinsRead">.</div>
 
-              <div className="TimeReadContainer">
-                <div className="MinsRead">
-                  {getReadingTime(postData.body)} Min Read
+                  <div className="MinsRead">
+                    {getDateFormat(postData.publishedAt)}
+                  </div>
                 </div>
-                <div className="MinsRead">.</div>
-                <div className="MinsRead">
-                  {getDateFormat(postData.publishedAt)}
-                </div>
-              </div>
-            </LineBetween>
+              </LineBetween>
+            )}
             <BlogImage src={postData?.mainImage} alt={postData?.mainImage} />
 
             <p>
@@ -120,36 +141,36 @@ const Blog = () => {
             <LineUnder>
               {isPhone && (
                 <RelatedCardComponent
-                  relatedArticlesData={postData?.relatedArticlesData}
+                  relatedArticlesData={relatedArticlesData}
                 />
               )}
             </LineUnder>
           </Content>
-          <ShareContainer title="share">
-            <div className="icon">
-              <FacebookIcon />
-            </div>
-            <div className="icon">
-              <WhatsAppIcon />
-            </div>
-            <div className="icon">
-              <InstagramIcon />
-            </div>
-            <div className="icon">
-              <TwitterIcon />
-            </div>
-          </ShareContainer>
+          {postData && (
+            <ShareContainer title="share">
+              <div className="icon">
+                <FacebookIcon />
+              </div>
+              <div className="icon">
+                <WhatsAppIcon />
+              </div>
+              <div className="icon">
+                <InstagramIcon />
+              </div>
+              <div className="icon">
+                <TwitterIcon />
+              </div>
+            </ShareContainer>
+          )}
         </BlogContent>
         <AurthorAndRCards_container>
           {!isPhone && (
             <>
               <Aurthor>
-                <AurthorCard aurthorData={postData.author} />
+                <AurthorCard aurthorData={postData?.author} />
               </Aurthor>
 
-              <RelatedCardComponent
-                relatedArticlesData={postData?.relatedArticlesData}
-              />
+              <RelatedCardComponent relatedArticlesData={relatedArticlesData} />
             </>
           )}
         </AurthorAndRCards_container>
