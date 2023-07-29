@@ -33,16 +33,16 @@ import { getDateFormat } from "@/Helpers/DateFormat";
 const Blog = () => {
   const { isPhone } = GetScreenBreakPoints();
   const router = useRouter();
-  const { slug } = router.query;
+  const { blogg } = router.query;
   const [postData, setPostData] = useState<PostData | null>(null);
   const PROJECTID = process.env.NEXT_PUBLIC_PROJECTID;
   const PUBLIC_DATASET = process.env.NEXT_PUBLIC_DATASET;
 
   useEffect(() => {
     const fetchPost = async () => {
-      const [post, relatedArticlesData] = await Promise.all([
-        client.fetch(
-          `*[_type == "post" && slug.current == $slug][0]{
+      try {
+        const post = await client.fetch(
+          `*[_type == "post" && slug.current == $blogg][0]{
             _id,
             title,
             body,
@@ -52,10 +52,16 @@ const Blog = () => {
             "mainImage": mainImage.asset->url,
             publishedAt
           }`,
-          { slug }
-        ),
-        client.fetch(
-          `*[_type == "post" && slug.current != $slug][0...3]{
+          { blogg }
+        );
+
+        const [categoryTitles] = post?.categories;
+
+        const relatedArticlesData = await client.fetch(
+          `*[_type == "post" 
+            && slug.current != $blogg 
+            && $categoryTitles in categories[]->title
+          ][0...3]{
             _id,
             title,
             body,
@@ -63,16 +69,19 @@ const Blog = () => {
             "categories": categories[]->title,
             "mainImage": mainImage.asset->url,
           }`,
-          { slug }
-        ),
-      ]);
-      setPostData({ ...post, relatedArticlesData });
+          { blogg, categoryTitles }
+        );
+
+        setPostData({ ...post, relatedArticlesData });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
-    if (slug) {
+    if (blogg) {
       fetchPost();
     }
-  }, [slug]);
+  }, [blogg]);
 
   if (!postData) {
     return null;
