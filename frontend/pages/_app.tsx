@@ -1,6 +1,12 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import GoogleAds from "@/Components/GoogleAds/GoogleAds";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <GoogleAds />
+      <Component {...pageProps} />
+    </>
+  );
 }

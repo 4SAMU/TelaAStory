@@ -49,3 +49,18 @@ a {
 .FooterContainer {
   background: linear-gradient(167deg, #119ab8 0%, #0d2436 100%);
 }
+
+/* styles.css */
+.ad-container {
+  position: fixed;
+  bottom: 1%;
+  text-align: center;
+  z-index: 100;
+  right: 10px;
+  width: auto;
+  height: auto;
+}
+
+.adsbygoogle {
+  background-color: #f2f2f2;
+}
