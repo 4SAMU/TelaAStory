@@ -11,6 +11,7 @@ const SocialMediaHelmet = (props: any) => {
       <meta property="og:image" content={imageUrl} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="article" />
+      <meta name="google-adsense-account" content="ca-pub-9052139849973525"></meta>
 
       {/* Twitter Card tags */}
       <meta name="twitter:title" content={title} />
