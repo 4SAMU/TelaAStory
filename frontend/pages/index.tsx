@@ -10,11 +10,14 @@ export default function Home() {
     setIsServer(true);
   }, []);
 
-
-  
   return (
     <>
       <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9052139849973525"
+          crossorigin="anonymous"
+        ></script>
         <title>TelaAstori</title>
         <meta
           name="description"
